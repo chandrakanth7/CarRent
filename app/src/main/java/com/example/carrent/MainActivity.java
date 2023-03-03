@@ -22,35 +22,31 @@ public class MainActivity extends AppCompatActivity {
         about = findViewById(R.id.cardAboutus);
         contact = findViewById(R.id.cardContact);
 
-        Intent intent = new Intent(MainActivity.this, LandingPage.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-
         rent.setOnClickListener(v -> {
-            Intent intent1 = new Intent(getApplicationContext(), Rent.class);
-            startActivity(intent1);
-        });
+                    Intent intent = new Intent(getApplicationContext(), Rent.class);
+                    startActivity(intent);
+                });
+
         pick.setOnClickListener(v -> {
-            Intent intent2 = new Intent(getApplicationContext(), PickUp.class);
-            startActivity(intent2);
+            Intent intent = new Intent(getApplicationContext(), PickUp.class);
+            startActivity(intent);
         });
         carmap.setOnClickListener(v -> {
-            Intent intent3 = new Intent(getApplicationContext(), CarMap.class);
-            startActivity(intent3);
+            Intent intent = new Intent(getApplicationContext(), CarMap.class);
+            startActivity(intent);
         });
         about.setOnClickListener(v -> {
-            Intent intent4 = new Intent(getApplicationContext(), About.class);
-            startActivity(intent4);
+            Intent intent = new Intent(getApplicationContext(), About.class);
+            startActivity(intent);
         });
         contact.setOnClickListener(v -> {
-            Intent intent5 = new Intent(getApplicationContext(), Contact.class);
-            startActivity(intent5);
+            Intent intent = new Intent(getApplicationContext(), Contact.class);
+            startActivity(intent);
         });
         logout.setOnClickListener(v -> {
-            Intent intent6 = new Intent(MainActivity.this, LandingPage.class);
-            intent6.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent6);
+            Intent intent = new Intent(MainActivity.this, LandingPage.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         });
-
     }
 }

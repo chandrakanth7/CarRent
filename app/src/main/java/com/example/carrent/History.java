@@ -2,8 +2,7 @@ package com.example.carrent;
 
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
