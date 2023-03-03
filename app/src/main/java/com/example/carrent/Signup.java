@@ -28,38 +28,15 @@ public class Signup extends AppCompatActivity {
         mRegisterBtn=findViewById(R.id.register);
         mLoginBtn = findViewById(R.id.login);
 
-            Intent intent = new Intent(Signup.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-
         mRegisterBtn.setOnClickListener(v -> {
             String email = mEmail.getText().toString().trim();
             String password= mPassword.getText().toString().trim();
             String name= mFullName.getText().toString().trim();
             String phone= mPhone.getText().toString().trim();
+            Intent intent = new Intent(this,LogIn.class);
+            startActivity(intent);
 
-            if(TextUtils.isEmpty(email))
-            {
-                mEmail.setError("Email is Required.");
-                return;
-            }
-
-            if(TextUtils.isEmpty(password))
-            {
-                mPassword.setError("Password is Required.");
-                return;
-            }
-
-            if(password.length() < 6) {
-                mPassword.setError("Password Must be >=6 Characters");
-                return;
-            }
-
-                    Intent intent1 = new Intent(Signup.this, MainActivity.class);
-                    intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent1);
-
-        });
-        mLoginBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), LogIn.class)));
+        mLoginBtn.setOnClickListener(v1 -> startActivity(new Intent(getApplicationContext(), LogIn.class)));
+    });
     }
 }
