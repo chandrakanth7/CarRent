@@ -29,14 +29,15 @@ public class Signup extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.login);
 
         mRegisterBtn.setOnClickListener(v -> {
-            String email = mEmail.getText().toString().trim();
-            String password= mPassword.getText().toString().trim();
-            String name= mFullName.getText().toString().trim();
-            String phone= mPhone.getText().toString().trim();
-            Intent intent = new Intent(this,LogIn.class);
-            startActivity(intent);
-
-        mLoginBtn.setOnClickListener(v1 -> startActivity(new Intent(getApplicationContext(), LogIn.class)));
-    });
+                    String email = mEmail.getText().toString().trim();
+                    String password = mPassword.getText().toString().trim();
+                    String name = mFullName.getText().toString().trim();
+                    String phone = mPhone.getText().toString().trim();
+                    Intent intent = new Intent(this, LogIn.class);
+                    startActivity(intent);
+                });
+        mLoginBtn.setOnClickListener(v1 -> {
+            startActivity(new Intent(getApplicationContext(), LogIn.class));
+        });
     }
 }
