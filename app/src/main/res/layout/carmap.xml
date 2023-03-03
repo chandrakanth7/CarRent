@@ -14,13 +14,13 @@
         android:textSize="24sp"
         android:textColor="@color/white"
         android:layout_margin="20dp"/>
-    <fragment
-        android:id="@+id/google_map"
-        xmlns:map="http://schemas.android.com/apk/res-auto"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
-        map:uiZoomControls="true"
-        />
+<!--    <fragment-->
+<!--        android:id="@+id/google_map"-->
+<!--        xmlns:map="http://schemas.android.com/apk/res-auto"-->
+<!--        android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        map:uiZoomControls="true"-->
+<!--        />-->
 </RelativeLayout>
