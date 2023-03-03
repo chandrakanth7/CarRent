@@ -24,8 +24,16 @@ public class LogIn extends AppCompatActivity {
         mRegisterBtn = findViewById(R.id.register);
         mLoginBtn = findViewById(R.id.login);
 
-            Intent intent = new Intent(LogIn.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+        mLoginBtn.setOnClickListener(v -> {
+            // redirect to MainActivity
+            Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent2);
+        });
+
+        mRegisterBtn.setOnClickListener(v -> {
+            // redirect to RegisterActivity
+            Intent intent2 = new Intent(getApplicationContext(), Signup.class);
+            startActivity(intent2);
+        });
     }
 }
