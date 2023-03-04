@@ -23,7 +23,7 @@ public class Rent extends AppCompatActivity
         mSubmitBtn=findViewById(R.id.submit);
 
         mSubmitBtn.setOnClickListener(v -> {
-            Toast.makeText(this, "This functionality will be implemented soon", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "This functionality will be implemented shortly", Toast.LENGTH_SHORT).show();
             String fullname = mFullName.getText().toString().trim();
             String carmodel= mCarModel.getText().toString().trim();
             String description= mDescription.getText().toString().trim();
