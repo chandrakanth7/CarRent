@@ -12,12 +12,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
+        android:layout_height="524dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="-50dp"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/profile"
@@ -33,10 +33,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            app:hintAnimationEnabled="true"
             android:textColorHint="@color/black"
-            app:hintTextColor="@color/black"
-            app:boxStrokeColor="@color/black">
+            app:boxStrokeColor="@color/black"
+            app:hintAnimationEnabled="true"
+            app:hintTextColor="@color/black">
 
             <EditText
                 android:id="@+id/name"
@@ -62,10 +62,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            app:hintAnimationEnabled="true"
             android:textColorHint="@color/black"
-            app:hintTextColor="@color/black"
-            app:boxStrokeColor="@color/black">
+            app:boxStrokeColor="@color/black"
+            app:hintAnimationEnabled="true"
+            app:hintTextColor="@color/black">
 
             <EditText
                 android:id="@+id/email"
@@ -91,10 +91,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            app:hintAnimationEnabled="true"
             android:textColorHint="@color/black"
-            app:hintTextColor="@color/black"
-            app:boxStrokeColor="@color/black">
+            app:boxStrokeColor="@color/black"
+            app:hintAnimationEnabled="true"
+            app:hintTextColor="@color/black">
 
             <EditText
                 android:id="@+id/message"
@@ -127,5 +127,15 @@
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/conform"
+            android:layout_width="222dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:text="Please Give us your honest feedback so we can improve our work for your convenience. "
+            android:textAlignment="center" />
+
     </LinearLayout>
+
+
 </LinearLayout>
