@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "549228902583",
+    "project_id": "carrent-c1c8f",
+    "storage_bucket": "carrent-c1c8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549228902583:android:30db88924aef92bc2df532",
+        "android_client_info": {
+          "package_name": "com.example.carrent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549228902583-a1rdq9a89ks74kuc0ki12d0erb9auh1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.carrent",
+            "certificate_hash": "fbec4e3bdccd0f12eea54ed6deb4dc5ad5a0915d"
+          }
+        },
+        {
+          "client_id": "549228902583-komv1tm03ic6dv0t7io89ank5b6sipkc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM-UB_Hp8PZpVWepLsLfHNBQFvDtriQRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549228902583-komv1tm03ic6dv0t7io89ank5b6sipkc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
