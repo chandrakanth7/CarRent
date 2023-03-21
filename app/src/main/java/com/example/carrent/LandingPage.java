@@ -19,6 +19,10 @@ public class LandingPage extends AppCompatActivity {
         register = findViewById(R.id.cardRegister);
         about = findViewById(R.id.cardAboutus);
 
+      
+
+
+
         login.setOnClickListener(v -> startActivity(new Intent(this, LogIn.class)));
 
         register.setOnClickListener(v -> startActivity(new Intent(this, Signup.class)));
