@@ -6,9 +6,12 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     CardView rent, pick, logout, carmap, about, contact, mypin;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
         carmap = findViewById(R.id.cardCarMap);
         about = findViewById(R.id.cardAboutus);
         contact = findViewById(R.id.cardContact);
+
+        fAuth= FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() ==null)
+        {
+            Intent intent = new Intent(MainActivity.this, LandingPage.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
 
         rent.setOnClickListener(v -> {
                     Intent intent = new Intent(getApplicationContext(), Rent.class);
@@ -44,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         logout.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, LandingPage.class);
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(getApplicationContext(), LandingPage.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         });
