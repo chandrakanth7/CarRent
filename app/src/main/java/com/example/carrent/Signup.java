@@ -91,7 +91,7 @@ public class Signup extends AppCompatActivity {
             });
         });
 
-        mLoginBtn.setOnClickListener(v1 -> {
+        mLoginBtn.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), LogIn.class));
         });
     }
