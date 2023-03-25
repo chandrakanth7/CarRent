@@ -36,6 +36,7 @@ public class Signup extends AppCompatActivity {
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
         mPhone = findViewById(R.id.phone);
+        mAddress = findViewById(R.id.address);
         mRegisterBtn=findViewById(R.id.register);
         mLoginBtn = findViewById(R.id.login);
 
@@ -76,6 +77,7 @@ public class Signup extends AppCompatActivity {
                     user.put("name",name);
                     user.put("email",email);
                     user.put("phone",phone);
+                    user.put("address",address);
                     documentReference.set(user).addOnSuccessListener(aVoid -> {
                         Log.d(TAG,"onSuccess: user Profile is created for "+ userID);
                         Toast.makeText(Signup.this, "Registered Successfully.", Toast.LENGTH_SHORT) .show();
