@@ -53,9 +53,9 @@ public class LogIn extends AppCompatActivity {
                 return;
             }
 
-            if(password.length() < 6)
+            if(password.length() < 8)
             {
-                mPassword.setError("Password Must be >=6 Characters");
+                mPassword.setError("Password Must be >=8 Characters");
                 return;
             }
 
