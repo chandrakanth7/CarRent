@@ -53,7 +53,7 @@ public class Signup extends AppCompatActivity {
                     String email = mEmail.getText().toString().trim();
                     String password = mPassword.getText().toString().trim();
                     String name = mFullName.getText().toString().trim();
-                    String phone = mPhone.getText().toString().trim();
+                    String phone = mPhone.getText().toString().trim();zAZ
 
             if(TextUtils.isEmpty(password))
             {
@@ -61,9 +61,9 @@ public class Signup extends AppCompatActivity {
                 return;
             }
 
-            if(password.length() < 6)
+            if(password.length() < 8)
             {
-                mPassword.setError("Password Must be >=6 Characters");
+                mPassword.setError("Password Must be >=8 Characters");
                 return;
             }
 
