@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class Signup extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText mFullName,mEmail,mPassword,mPhone;
+    EditText mFullName,mEmail,mPassword,mPhone,mAddress;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -54,7 +54,9 @@ public class Signup extends AppCompatActivity {
                     String email = mEmail.getText().toString().trim();
                     String password = mPassword.getText().toString().trim();
                     String name = mFullName.getText().toString().trim();
-                    String phone = mPhone.getText().toString().trim();zAZ
+                    String phone = mPhone.getText().toString().trim();
+                    String address = maddress.getText().toString().trim();
+
 
             if(TextUtils.isEmpty(password))
             {
