@@ -38,29 +38,29 @@ public class LogIn extends AppCompatActivity {
         }
 
         mLoginBtn.setOnClickListener(v -> {
-            String email = mEmail.getText().toString().trim();
-            String password= mPassword.getText().toString().trim();
+            String gmail = mgmail.getText().toString().trim();
+            String pwd= mPwd.getText().toString().trim();
 
-            if(TextUtils.isEmpty(email))
+            if(TextUtils.isEmpty(gmail))
             {
                 mEmail.setError("Email is Required.");
                 return;
             }
 
-            if(TextUtils.isEmpty(password))
+            if(TextUtils.isEmpty(pwd))
             {
-                mPassword.setError("Password is Required.");
+                mPwd.setError("Password is Required for rent the car.");
                 return;
             }
 
-            if(password.length() < 6)
+            if(password.length() < 8)
             {
-                mPassword.setError("Password Must be >=6 Characters");
+                mPwd.setError("Password Must be greater than eight Characters");
                 return;
             }
 
             //authenticate the user
-            fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
+            fAuth.signInWithEmailAndPassword(gmail,Pwd).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
                     Toast.makeText(LogIn.this, "Logged in Successfully.", Toast.LENGTH_SHORT) .show();
                     Intent intent = new Intent(LogIn.this, MainActivity.class);

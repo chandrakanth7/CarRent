@@ -8,6 +8,8 @@ import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+
+
 public class LandingPage extends AppCompatActivity {
 
     CardView login,register,about;
