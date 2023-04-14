@@ -132,7 +132,7 @@
             android:layout_width="222dp"
             android:layout_height="54dp"
             android:layout_weight="1"
-            android:text="Please Give us your honest feedback so we can improve our work for your convenience. "
+            android:text="Please Give us your honest feedback so we can improve our work for your convenience.\n\n You can also contact us via socialmedia below "
             android:textAlignment="center" />
 
     </LinearLayout>
