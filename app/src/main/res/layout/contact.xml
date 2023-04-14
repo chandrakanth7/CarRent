@@ -142,28 +142,33 @@
             android:padding="10dp">
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/facebook"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:backgroundTint="#00FFFFFF"
-                app:srcCompat="@drawable/facebook50x50" />
+                app:srcCompat="@drawable/facebook50x50"
+                android:contentDescription="links to our fb page"/>
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/twitter"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:backgroundTint="#00FFFFFF"
-                app:srcCompat="@drawable/twitter50x50" />
+                app:srcCompat="@drawable/twitter50x50"
+                android:contentDescription="links to our twitter page"/>
+
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/instagram"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:backgroundTint="#00FFFFFF"
-                app:srcCompat="@drawable/instagram50x50" />
+                app:srcCompat="@drawable/instagram50x50"
+                android:contentDescription="links to our insta page"/>
+
         </LinearLayout>
 
     </LinearLayout>
