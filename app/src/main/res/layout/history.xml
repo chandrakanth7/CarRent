@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#212121"
+    android:background="#F6E820"
     tools:context=".History">
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:text="@string/history"
             android:fontFamily="@font/opensans"
             android:textSize="26sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_margin="20dp"/>
 
         <LinearLayout
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:clickable="true"
-                app:cardBackgroundColor="#03DAC6"
+                app:cardBackgroundColor="#3700B3"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
                 tools:ignore="KeyboardInaccessibleWidget">
@@ -44,7 +44,7 @@
                     android:layout_margin="10dp"
                     android:fontFamily="@font/roboto"
                     android:text="Empty History"
-                    android:textColor="#212121"
+                    android:textColor="#FFFF"
                     android:textSize="15sp"
                     android:textStyle="italic" />
 
@@ -60,7 +60,7 @@
                 android:layout_marginRight="10dp"
                 android:clickable="true"
                 app:cardBackgroundColor="#B00020"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="8dp"
                 tools:ignore="KeyboardInaccessibleWidget">
 
@@ -68,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/opensans"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/delete"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
