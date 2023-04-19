@@ -1,6 +1,7 @@
 package com.example.carrent;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ import java.util.Map;
 public class Contact extends AppCompatActivity {
     EditText name, email, message;
     Button submit;
+    ImageButton facebook, instagram, twitter;
     boolean isNameValid, isEmailValid, isMessageValid;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -39,6 +42,9 @@ public class Contact extends AppCompatActivity {
         email = findViewById(R.id.email);
         message = findViewById(R.id.message);
         submit =  findViewById(R.id.submit);
+        facebook= findViewById(R.id.facebook);
+        twitter= findViewById(R.id.twitter);
+        instagram= findViewById(R.id.instagram);
         nameError =  findViewById(R.id.nameError);
         emailError =  findViewById(R.id.emailError);
         messageError =  findViewById(R.id.messageError);
@@ -47,6 +53,33 @@ public class Contact extends AppCompatActivity {
         fStore= FirebaseFirestore.getInstance();
 
         submit.setOnClickListener(v -> SetValidation());
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "Https://www.facebook.com/Car_rent";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "Https://www.twitter.com/Car_rent";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+        instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "Https://www.instagram.com/Car_rent";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
     }
     public void SetValidation() {
 

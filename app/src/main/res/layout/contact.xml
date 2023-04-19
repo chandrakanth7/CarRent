@@ -11,8 +11,8 @@
     tools:context=".Contact">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="524dp"
+        android:layout_width="377dp"
+        android:layout_height="639dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="-50dp"
         android:layout_marginRight="10dp"
@@ -129,13 +129,51 @@
 
         <TextView
             android:id="@+id/conform"
-            android:layout_width="222dp"
-            android:layout_height="54dp"
-            android:layout_weight="1"
-            android:text="Please Give us your honest feedback so we can improve our work for your convenience. "
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Please Give us your honest feedback so we can improve our work for your convenience.\n\n You can also contact us via socialmedia below "
             android:textAlignment="center" />
 
+
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/facebook"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00FFFFFF"
+                app:srcCompat="@drawable/facebook50x50"
+                android:contentDescription="links to our fb page"/>
+
+            <ImageButton
+                android:id="@+id/twitter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00FFFFFF"
+                app:srcCompat="@drawable/twitter50x50"
+                android:contentDescription="links to our twitter page"/>
+
+
+            <ImageButton
+                android:id="@+id/instagram"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00FFFFFF"
+                app:srcCompat="@drawable/instagram50x50"
+                android:contentDescription="links to our insta page"/>
+
+        </LinearLayout>
+
     </LinearLayout>
+
+
 
 
 </LinearLayout>
