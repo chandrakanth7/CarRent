@@ -41,6 +41,10 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.API_KEY"
+            android:value="AIzaSyAxHtP_2EoYYqgogJzquPdsln5rshOeVOU">
+        </meta-data>
     </application>
 
 </manifest>
