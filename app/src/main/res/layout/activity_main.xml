@@ -216,6 +216,33 @@
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardProfile"
+                android:clickable="true"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#55FFFFFF"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/profile"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Profile"
+                    android:fontFamily="@font/opensans"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="130dp"
+                    android:layout_gravity="center_horizontal"/>
+            </androidx.cardview.widget.CardView>
+
         </GridLayout>
     </LinearLayout>
 </ScrollView>

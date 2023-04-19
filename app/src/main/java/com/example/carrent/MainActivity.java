@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView rent, pick, logout, carmap, about, contact, mypin;
+    CardView rent, pick, logout, carmap, about, contact, mypin, profile;
     FirebaseAuth fAuth;
 
     @Override
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         carmap = findViewById(R.id.cardCarMap);
         about = findViewById(R.id.cardAboutus);
         contact = findViewById(R.id.cardContact);
+        profile = findViewById(R.id.cardProfile);
 
         fAuth= FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser() ==null)
@@ -58,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(getApplicationContext(), LandingPage.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        });
+
+        profile.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Profile.class);
             startActivity(intent);
         });
     }

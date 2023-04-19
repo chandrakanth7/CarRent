@@ -81,6 +81,7 @@ public class Signup extends AppCompatActivity {
                     user.put("name",name);
                     user.put("email",email);
                     user.put("phone",phone);
+                    user.put("password",password);
                     //user.put("address",address);
                     documentReference.set(user).addOnSuccessListener(aVoid -> {
                         Log.d(TAG,"onSuccess: user Profile is created for "+ userID);
