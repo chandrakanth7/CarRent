@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         pick.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), PickUp.class);
+            Intent intent = new Intent(getApplicationContext(), CarPickup.class);
             startActivity(intent);
         });
         carmap.setOnClickListener(v -> {
@@ -66,5 +66,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), Profile.class);
             startActivity(intent);
         });
+
+
     }
 }

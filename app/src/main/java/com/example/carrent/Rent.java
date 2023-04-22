@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.firebase.geofire.GeoFireUtils;
+import com.firebase.geofire.GeoLocation;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationListener;
@@ -73,6 +75,62 @@ public class Rent extends AppCompatActivity implements OnMapReadyCallback, Locat
         } else {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
         }
+
+        mSubmitBtn.setOnClickListener(v -> {
+            Log.d("Hi","Hello");
+            String fullname = mFullName.getText().toString().trim();
+            String carmodel= mCarModel.getText().toString().trim();
+            String description= mDescription.getText().toString().trim();
+            String phone= mPhone.getText().toString().trim();
+            String type= "Renter";
+
+            if(TextUtils.isEmpty(fullname))
+            {
+                mFullName.setError("Name is Required.");
+                return;
+            }
+
+            if(TextUtils.isEmpty(carmodel))
+            {
+                mCarModel.setError("Required.");
+                return;
+            }
+
+            if(phone.length() < 10)
+            {
+                mPhone.setError("Phone Number Must be >=10 Characters");
+                return;
+            }
+
+            userID = fAuth.getCurrentUser().getUid();
+            CollectionReference collectionReference = fStore.collection("carRentals");
+
+            Location location = mLastLocation;
+            GeoPoint geoPoint = new GeoPoint(location.getLatitude(),location.getLongitude());
+            Map<String,Object> user = new HashMap<>();
+            user.put("timestamp", FieldValue.serverTimestamp());
+            user.put("name",fullname);
+            user.put("Car Model",carmodel);
+            user.put("phone",phone);
+            user.put("description",description);
+            user.put("location",geoPoint);
+            user.put("geohash", GeoFireUtils.getGeoHashForLocation(new GeoLocation(location.getLatitude(), location.getLongitude())));
+            user.put("userid",userID);
+            user.put("type",type);
+
+            collectionReference.add(user)
+                    .addOnSuccessListener(documentReference -> {
+                        Toast.makeText(getApplicationContext(),"Success!",Toast.LENGTH_SHORT).show();
+                        Log.d(TAG,"Success!");
+                        Intent intent = new Intent(Rent.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(getApplicationContext(),"Error!",Toast.LENGTH_SHORT).show();
+                        Log.w(TAG, "Error!", e);
+                    });
+        });
     }
 
     @Override
@@ -95,6 +153,7 @@ public class Rent extends AppCompatActivity implements OnMapReadyCallback, Locat
                         public void onSuccess(Location location) {
                             if (location != null) {
                                 // Add a marker at the user's current location
+                                mLastLocation = location;
                                 LatLng currentLatLng = new LatLng(location.getLatitude(),
                                         location.getLongitude());
                                 mMap.addMarker(new MarkerOptions().position(currentLatLng)
@@ -132,58 +191,6 @@ public class Rent extends AppCompatActivity implements OnMapReadyCallback, Locat
         mMap.addMarker(markerOptions).showInfoWindow();
 
 
-        mSubmitBtn.setOnClickListener(v -> {
-            String fullname = mFullName.getText().toString().trim();
-            String carmodel= mCarModel.getText().toString().trim();
-            String description= mDescription.getText().toString().trim();
-            String phone= mPhone.getText().toString().trim();
-            String type= "Renter";
 
-            if(TextUtils.isEmpty(fullname))
-            {
-                mFullName.setError("Name is Required.");
-                return;
-            }
-
-            if(TextUtils.isEmpty(carmodel))
-            {
-                mCarModel.setError("Required.");
-                return;
-            }
-
-            if(phone.length() < 10)
-            {
-                mPhone.setError("Phone Number Must be >=10 Characters");
-                return;
-            }
-
-            userID = fAuth.getCurrentUser().getUid();
-            CollectionReference collectionReference = fStore.collection("user data");
-
-            GeoPoint geoPoint = new GeoPoint(location.getLatitude(),location.getLongitude());
-            Map<String,Object> user = new HashMap<>();
-            user.put("timestamp", FieldValue.serverTimestamp());
-            user.put("name",fullname);
-            user.put("Car Model",carmodel);
-            user.put("phone",phone);
-            user.put("description",description);
-            user.put("location",geoPoint);
-            user.put("userid",userID);
-            user.put("type",type);
-
-            collectionReference.add(user)
-                    .addOnSuccessListener(documentReference -> {
-                        Toast.makeText(getApplicationContext(),"Success!",Toast.LENGTH_SHORT).show();
-                        Log.d(TAG,"Success!");
-                        //startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        Intent intent = new Intent(Rent.this, MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                    })
-                    .addOnFailureListener(e -> {
-                        Toast.makeText(getApplicationContext(),"Error!",Toast.LENGTH_SHORT).show();
-                        Log.w(TAG, "Error!", e);
-                    });
-        });
     }
 }

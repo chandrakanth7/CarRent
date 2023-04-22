@@ -29,6 +29,8 @@
         <activity android:name=".About"/>
         <activity android:name=".Profile"/>
         <activity android:name=".UserDataActivity"/>
+        <activity android:name=".ItemRental"/>
+        <activity android:name=".CarPickup"/>
         <activity
             android:name=".LandingPage"
             android:exported="true">
@@ -44,6 +46,10 @@
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.google.android.gms.API_KEY"
+            android:value="AIzaSyAxHtP_2EoYYqgogJzquPdsln5rshOeVOU">
+        </meta-data>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAxHtP_2EoYYqgogJzquPdsln5rshOeVOU">
         </meta-data>
     </application>
