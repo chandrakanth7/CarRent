@@ -66,6 +66,11 @@ public class Signup extends AppCompatActivity {
                 return;
             }
 
+            if(phone.length() != 10)
+            {
+                mPhone.setError("Phone number should be 10 digits.");
+            }
+
             if(password.length() < 8)
             {
                 mPassword.setError("Password Must be >=8 Characters");

@@ -1,11 +1,14 @@
 package com.example.carrent;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -35,6 +38,17 @@ public class CarRentalAdapter extends ArrayAdapter<CarRental> {
         txtView3.setText(rental.description);
         txtView4.setText(rental.location.toString());
         txtView5.setText(rental.carModel);
+
+//        txtView2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String number = txtView2.getText().toString();
+//                Intent callIntent = new Intent(Intent.ACTION_CALL);
+//                callIntent.setData(Uri.parse("tel:"+number));
+//                startActivity(callIntent);zz
+//                //Toast.makeText(getContext(), "Hello", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         return convertView;
     }

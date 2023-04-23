@@ -2,10 +2,15 @@ package com.example.carrent;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -43,21 +48,6 @@ public class CarPickup extends AppCompatActivity {
         getLocationAndSetData(false);
     }
 
-    private List<CarRental> getRentals() {
-        String name[] = {"Chandu","Abhijith","John"};
-        String phone[] = {"6605281899","2051230856","9747829474"};
-        String description[] = {"Good", "Better", "Excellent"};
-        String location[] = {"123.45 223.74","174.86 994.13", "637.274 974.66"};
-        String model[] = {"2019", "2020", "2022"};
-
-        List <CarRental> rentals = new ArrayList<>();
-        for (int i = 0; i < name.length; i++){
-            rentals.add(new CarRental(name[i], phone[i], description[i], location[i], model[i]));
-        }
-
-        return rentals;
-    }
-
     @SuppressLint("DefaultLocale")
     private String getDistance(GeoPoint geoPoint){
         Location newLocation = new Location("");
@@ -82,13 +72,12 @@ public class CarPickup extends AppCompatActivity {
 
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        // Find cities within 50km of London
         if (center == null)
             return;
 
-        final double radiusInM = 5 * 1000;
+        final double radiusInM = 10 * 1000;
 
-// Each item in 'bounds' represents a startAt/endAt pair. We have to issue
+// Each item in 'bounds' represents a startAtendAt pair. We have to issue
 // a separate query for each pair. There can be up to 9 pairs of bounds
 // depending on overlap, but in most cases there are 4.
         List<GeoQueryBounds> bounds = GeoFireUtils.getGeoHashQueryBounds(center, radiusInM);
@@ -128,11 +117,10 @@ public class CarPickup extends AppCompatActivity {
                         setViewData(closestRentals);
 
                         if (closestRentals.size() == 0) {
-                            Toast.makeText(CarPickup.this, "No cars found within 5km radius", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CarPickup.this, "No cars found within 10km(s) radius", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-
     }
 
     private void addRental(List<CarRental> rentals, DocumentSnapshot doc) {

@@ -11,7 +11,7 @@
         android:text="Name"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
@@ -19,21 +19,21 @@
         android:id="@+id/model_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:textSize="18sp"
         android:text="Model"
         android:textStyle="bold"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="20dp"/>
 
     <TextView
         android:id="@+id/desc_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Description"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="20dp"/>
 
     <TextView
         android:id="@+id/phone_textview"
@@ -41,8 +41,8 @@
         android:layout_height="wrap_content"
         android:text="Phone"
         android:layout_weight="1"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
@@ -51,9 +51,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Location"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
         android:textSize="18sp"
+        android:layout_marginBottom="10dp"
         android:textStyle="bold"/>
 
 </LinearLayout>

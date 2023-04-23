@@ -189,8 +189,5 @@ public class Rent extends AppCompatActivity implements OnMapReadyCallback, Locat
         MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("You are here");
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
         mMap.addMarker(markerOptions).showInfoWindow();
-
-
-
     }
 }
