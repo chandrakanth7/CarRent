@@ -2,6 +2,7 @@ package com.example.carrent;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -66,6 +67,19 @@ public class CarPickup extends AppCompatActivity {
         ListView listView = findViewById(R.id.customListView);
         CarRentalAdapter adapter = new CarRentalAdapter(getApplicationContext(),carRentals);
         listView.setAdapter(adapter);
+
+        //Code
+//        TextView txt = (TextView) findViewById(R.id.phone_textview);
+//        String number = txt.getText().toString();
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent intent = new Intent();
+//                intent.setAction(Intent.ACTION_DIAL);
+//                intent.setData(Uri.parse("tel: "+number));
+//                startActivity(intent);
+//            }
+//        });
     }
 
     private void fillClosestRentals(GeoLocation center) {

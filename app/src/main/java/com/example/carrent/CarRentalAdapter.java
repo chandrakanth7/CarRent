@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
+
 import java.util.List;
 
 public class CarRentalAdapter extends ArrayAdapter<CarRental> {
@@ -38,17 +40,6 @@ public class CarRentalAdapter extends ArrayAdapter<CarRental> {
         txtView3.setText(rental.description);
         txtView4.setText(rental.location.toString());
         txtView5.setText(rental.carModel);
-
-//        txtView2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String number = txtView2.getText().toString();
-//                Intent callIntent = new Intent(Intent.ACTION_CALL);
-//                callIntent.setData(Uri.parse("tel:"+number));
-//                startActivity(callIntent);zz
-//                //Toast.makeText(getContext(), "Hello", Toast.LENGTH_SHORT).show();
-//            }
-//        });
 
         return convertView;
     }
