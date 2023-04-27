@@ -18,8 +18,8 @@ Regarding outside API's, we will be using Google Maps API to get the location of
 The implementation of using firebase and maps API have been successfully integrated to our application.
 
 **Test Credentials**
-  username : abcd@gmail.com
-  password : 12345678
+  username : chandu123@gmail.com
+  password : abcd@1234
  
 **Supported Devices**
   Pixel 5 API 24
